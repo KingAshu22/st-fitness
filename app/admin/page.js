@@ -11,22 +11,31 @@ import { Lock, User } from "lucide-react"
 export default function AdminLoginPage() {
   const [credentials, setCredentials] = useState({ username: "", password: "" })
   const [error, setError] = useState("")
+  const [isClient, setIsClient] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
-    // Check if already logged in
-    const isLoggedIn = localStorage.getItem("adminLoggedIn")
-    if (isLoggedIn === "true") {
-      router.push("/admin/dashboard")
+    // Set client flag to true after component mounts
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    // Only check localStorage after component has mounted on client
+    if (isClient) {
+      const isLoggedIn = localStorage.getItem("adminLoggedIn")
+      if (isLoggedIn === "true") {
+        router.push("/admin/dashboard")
+      }
     }
-  }, [router])
+  }, [router, isClient])
 
   const handleLogin = (e) => {
     e.preventDefault()
-
     // Simple authentication (in production, use proper authentication)
     if (credentials.username === "admin" && credentials.password === "stfitness2024") {
-      localStorage.setItem("adminLoggedIn", "true")
+      if (typeof window !== "undefined") {
+        localStorage.setItem("adminLoggedIn", "true")
+      }
       router.push("/admin/dashboard")
     } else {
       setError("Invalid credentials")
@@ -39,6 +48,15 @@ export default function AdminLoginPage() {
       [e.target.name]: e.target.value,
     })
     setError("")
+  }
+
+  // Show loading state while checking authentication
+  if (!isClient) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="text-center">Loading...</div>
+      </div>
+    )
   }
 
   return (
@@ -71,7 +89,6 @@ export default function AdminLoginPage() {
                 />
               </div>
             </div>
-
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
               <div className="relative">
@@ -88,14 +105,11 @@ export default function AdminLoginPage() {
                 />
               </div>
             </div>
-
             {error && <div className="text-red-600 text-sm text-center">{error}</div>}
-
             <Button type="submit" className="w-full">
               Login
             </Button>
           </form>
-
           <div className="mt-6 text-center text-sm text-gray-600">
             <p>Demo Credentials:</p>
             <p>Username: admin</p>
