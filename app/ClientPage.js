@@ -118,52 +118,65 @@ export default function ClientPage() {
     <div className="min-h-screen">
       <Navbar />
 
-      {/* Hero Section with GIF Background */}
-      <section className="hero-gif-bg relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+      {/* Hero Section with Video Background */}
+<section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  {/* Video Background */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+  >
+    <source src="/hero.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-        {/* Hero Content */}
-        <div className="relative z-20 text-center text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-              <span className="block text-white mb-2">IT'S TIME TO</span>
-              <span className="block text-yellow-400 typewriter-text">
-                {currentText}
-                <span className="animate-pulse">|</span>
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto font-light">
-              Push your limits. Break your barriers. Transform your life at ST Fitness - where champions are made.
-            </p>
-          </div>
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button
-              asChild
-              size="lg"
-              className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold text-lg px-8 py-4 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl"
-            >
-              <Link href="/contact">START YOUR JOURNEY</Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-black bg-transparent font-bold text-lg px-8 py-4 rounded-full transform hover:scale-105 transition-all duration-300"
-            >
-              <Link href="/services">EXPLORE PROGRAMS</Link>
-            </Button>
-          </div>
+  {/* Hero Content */}
+  <div className="relative z-20 text-center text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div className="mb-8">
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+        <span className="block text-white mb-2">IT'S TIME TO</span>
+        <span className="block text-yellow-400 typewriter-text">
+          {currentText}
+          <span className="animate-pulse">|</span>
+        </span>
+      </h1>
+      <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto font-light">
+        Push your limits. Break your barriers. Transform your life at ST Fitness - where champions are made.
+      </p>
+    </div>
 
-          {/* Scroll indicator */}
-          <div className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+      <Button
+        asChild
+        size="lg"
+        className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold text-lg px-8 py-4 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl"
+      >
+        <Link href="/contact">START YOUR JOURNEY</Link>
+      </Button>
+      <Button
+        asChild
+        variant="outline"
+        size="lg"
+        className="border-2 border-white text-white hover:bg-white hover:text-black bg-transparent font-bold text-lg px-8 py-4 rounded-full transform hover:scale-105 transition-all duration-300"
+      >
+        <Link href="/services">EXPLORE PROGRAMS</Link>
+      </Button>
+    </div>
+
+    {/* Scroll indicator */}
+    <div className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+        <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Rest of the sections remain the same */}
       {/* Features Section */}
