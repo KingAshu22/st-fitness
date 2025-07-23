@@ -1,10 +1,10 @@
 import ClientPage from "./ClientPage"
 
 export const metadata = {
-  title: "ST Fitness - Transform Your Body, Transform Your Life | Premium Gym",
+  title: "ST Fitness - Revolutionizing Gym Management | Gym Management Service",
   description:
-    "Join ST Fitness, the premier gym with state-of-the-art equipment, expert personal trainers, and comprehensive fitness programs. Start your transformation today!",
-  keywords: "gym, fitness center, personal training, weight loss, muscle building, cardio, strength training, wellness",
+    "ST Fitness is a leading Gym Management Company offering cutting-edge tools to streamline operations, improve member retention, and boost revenue for fitness centers. Take your gym business to the next level!",
+  keywords: "gym management, fitness software, gym CRM, gym operations, gym automation, member management, gym marketing",
 }
 
 export default function HomePage() {
