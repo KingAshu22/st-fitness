@@ -3,131 +3,109 @@ import Footer from "@/components/Footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
-import Image from "next/image"
-import { Dumbbell, Users, Heart, Zap, Target, Clock, CheckCircle } from "lucide-react"
+import {
+  Settings,
+  BarChart2,
+  TrendingUp,
+  Briefcase,
+  Target,
+  Users,
+  PieChart,
+  CheckCircle,
+} from "lucide-react"
 
 export const metadata = {
-  title: "Fitness Services - Personal Training, Group Classes & More | ST Fitness",
+  title: "Gym Management Services - Operations, Retention & Revenue | ST Fitness Management",
   description:
-    "Explore ST Fitness comprehensive services including personal training, group classes, nutrition coaching, and specialized programs designed for your success.",
-  keywords: "personal training, group fitness classes, nutrition coaching, strength training, cardio, yoga, pilates",
+    "ST Fitness Management provides top-tier gym management services including operational excellence, revenue growth, member retention strategies, sales & marketing, financial services, and more.",
+  keywords:
+    "gym management, fitness business operations, member retention, sales and marketing for gyms, fitness club consulting, gym revenue strategies",
 }
 
 export default function ServicesPage() {
   const services = [
     {
-      title: "Personal Training",
-      description: "One-on-one sessions with certified trainers tailored to your specific goals",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/services-3.jpg-k6x2xdjDR8dNAAqVcWIQxnqakGIZek.jpeg",
-      icon: <Target className="h-8 w-8 text-blue-600" />,
-      features: ["Customized workout plans", "Nutrition guidance", "Progress tracking", "Flexible scheduling"],
-      price: "",
+      emoji: "⚙️",
+      title: "Operational Excellence",
+      description: "Streamline your gym operations with our expert guidance and proven systems.",
+      icon: <Settings className="h-8 w-8 text-blue-600" />,
+      features: ["Staff training & SOPs", "Operational audits", "Tech integration", "KPI monitoring"],
     },
     {
-      title: "Group Fitness Classes",
-      description: "High-energy group workouts that motivate and challenge you",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/services-2.jpg-5SyIxnp0ZWw000CPJ02qLeQBSQ1a7o.jpeg",
+      emoji: "🙌",
+      title: "Member Retention Strategy",
+      description: "Boost your member loyalty with targeted engagement strategies.",
       icon: <Users className="h-8 w-8 text-blue-600" />,
-      features: [
-        "Variety of class types",
-        "All fitness levels welcome",
-        "Expert instructors",
-        "Fun, social environment",
-      ],
-      price: "",
+      features: ["CRM setup", "Loyalty programs", "Onboarding systems", "Retention analytics"],
     },
     {
-      title: "Strength Training",
-      description: "Build muscle, increase power, and improve overall strength",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero-2.jpg-PxmrArZxCYecv77wcFIbUPROyWiLKX.jpeg",
-      icon: <Dumbbell className="h-8 w-8 text-blue-600" />,
-      features: ["Free weights & machines", "Proper form instruction", "Progressive overload", "Injury prevention"],
-      price: "",
+      emoji: "💰",
+      title: "Revenue Optimization",
+      description: "Maximize your gym's revenue potential through smart strategies.",
+      icon: <TrendingUp className="h-8 w-8 text-blue-600" />,
+      features: ["Upsell programs", "Pricing strategy", "Member lifetime value", "Lead conversion improvement"],
     },
     {
-      title: "Cardio Training",
-      description: "Improve cardiovascular health and burn calories effectively",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/services-1.jpg-vs3ml9RCCuTK9igF84jm90q1OezIwK.jpeg",
-      icon: <Heart className="h-8 w-8 text-blue-600" />,
-      features: ["Treadmills & ellipticals", "Rowing machines", "Stationary bikes", "HIIT programs"],
-      price: "",
+      emoji: "🏢",
+      title: "Club Management",
+      description: "Full-service club management tailored for consistent growth and brand excellence.",
+      icon: <Briefcase className="h-8 w-8 text-blue-600" />,
+      features: ["Franchise systems", "Daily operations", "Brand compliance", "Leadership support"],
     },
     {
-      title: "Nutrition Coaching",
-      description: "Personalized meal plans and nutrition guidance for optimal results",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/services-4.jpg-BoZWGD6d4fVl3Gv9uQXX8XvD9FLUeb.jpeg",
-      icon: <Zap className="h-8 w-8 text-blue-600" />,
-      features: ["Custom meal plans", "Macro tracking", "Supplement advice", "Regular check-ins"],
-      price: "",
+      emoji: "📢",
+      title: "Sales & Marketing",
+      description: "Drive new memberships and brand awareness with high-performance marketing.",
+      icon: <Target className="h-8 w-8 text-blue-600" />,
+      features: ["Campaign planning", "Sales training", "Digital marketing", "Lead generation"],
     },
     {
-      title: "Yoga & Pilates",
-      description: "Improve flexibility, balance, and mind-body connection",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/about-us.jpg-LXWP52ECKzm7oRafPksHYsJm90S8ps.jpeg",
-      icon: <Clock className="h-8 w-8 text-blue-600" />,
-      features: ["Various yoga styles", "Pilates equipment", "Meditation sessions", "Stress relief"],
-      price: "",
+      emoji: "📊",
+      title: "Financial Services",
+      description: "Stay on top of your gym's finances with dedicated management and insights.",
+      icon: <BarChart2 className="h-8 w-8 text-blue-600" />,
+      features: ["Budget planning", "Payroll & billing", "Cash flow analysis", "Monthly reports"],
+    },
+    {
+      emoji: "📈",
+      title: "Performance Analytics",
+      description: "Make data-driven decisions with real-time gym performance dashboards.",
+      icon: <PieChart className="h-8 w-8 text-blue-600" />,
+      features: ["KPI visualization", "Member behavior tracking", "Trainer performance", "Data dashboards"],
     },
   ]
 
-  const classSchedule = [
+  const testimonials = [
     {
-      time: "6:00 AM",
-      monday: "HIIT",
-      tuesday: "Yoga",
-      wednesday: "Strength",
-      thursday: "Cardio",
-      friday: "HIIT",
-      saturday: "Yoga",
+      name: "Emily R.",
+      quote:
+        "ST Fitness transformed our gym's operations completely. Member satisfaction is at an all-time high!",
+      role: "Owner, FitZone Club",
     },
     {
-      time: "7:00 AM",
-      monday: "Yoga",
-      tuesday: "Strength",
-      wednesday: "HIIT",
-      thursday: "Yoga",
-      friday: "Strength",
-      saturday: "Pilates",
+      name: "Jason T.",
+      quote:
+        "Their retention strategies helped us reduce churn by over 30% in 6 months. Highly recommend!",
+      role: "Director, Pulse Fitness",
     },
     {
-      time: "9:00 AM",
-      monday: "Pilates",
-      tuesday: "HIIT",
-      wednesday: "Yoga",
-      thursday: "Strength",
-      friday: "Cardio",
-      saturday: "HIIT",
+      name: "Alicia M.",
+      quote:
+        "From finance to marketing, their team has helped streamline everything. It’s like having a COO on demand.",
+      role: "Founder, Urban Athletics",
+    },
+  ]
+
+  const caseStudies = [
+    {
+      title: "Case Study: Pulse Fitness Turnaround",
+      summary: "How ST Fitness helped Pulse Fitness recover post-pandemic with automation, training, and sales funnels.",
+      link: "/case-studies/pulse-fitness",
     },
     {
-      time: "12:00 PM",
-      monday: "Strength",
-      tuesday: "Cardio",
-      wednesday: "Pilates",
-      thursday: "HIIT",
-      friday: "Yoga",
-      saturday: "Strength",
-    },
-    {
-      time: "6:00 PM",
-      monday: "HIIT",
-      tuesday: "Yoga",
-      wednesday: "Strength",
-      thursday: "Pilates",
-      friday: "HIIT",
-      saturday: "Cardio",
-    },
-    {
-      time: "7:00 PM",
-      monday: "Yoga",
-      tuesday: "Strength",
-      wednesday: "HIIT",
-      thursday: "Yoga",
-      friday: "Pilates",
-      saturday: "Yoga",
+      title: "Case Study: Urban Athletics Growth",
+      summary: "Tripling revenue in under a year through pricing strategy and local SEO marketing.",
+      link: "/case-studies/urban-athletics",
     },
   ]
 
@@ -135,31 +113,25 @@ export default function ServicesPage() {
     <div className="min-h-screen">
       <Navbar />
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="pt-16 breadcrumb-bg text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-            <p className="text-xl max-w-3xl mx-auto">
-              Comprehensive fitness solutions designed to help you achieve your goals, whether you're a beginner or an
-              experienced athlete.
-            </p>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Gym Management Services</h1>
+          <p className="text-xl max-w-3xl mx-auto">
+            Partner with ST Fitness Management for full-spectrum support—from operations and revenue to marketing and analytics.
+          </p>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="relative h-48">
-                  <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
-                </div>
+              <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-center space-x-3 mb-2">
-                    {service.icon}
+                    <span className="text-3xl">{service.emoji}</span>
                     <CardTitle className="text-xl">{service.title}</CardTitle>
                   </div>
                   <CardDescription className="text-gray-600">{service.description}</CardDescription>
@@ -173,8 +145,7 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold text-blue-600">{service.price}</span>
+                  <div className="flex justify-end">
                     <Button asChild size="sm">
                       <Link href="/contact">Learn More</Link>
                     </Button>
@@ -186,159 +157,46 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Class Schedule */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Group Class Schedule</h2>
-            <p className="text-xl text-gray-600">Join our energizing group fitness classes throughout the week</p>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-lg shadow-lg">
-              <thead className="bg-blue-600 text-white">
-                <tr>
-                  <th className="px-4 py-3 text-left">Time</th>
-                  <th className="px-4 py-3 text-center">Monday</th>
-                  <th className="px-4 py-3 text-center">Tuesday</th>
-                  <th className="px-4 py-3 text-center">Wednesday</th>
-                  <th className="px-4 py-3 text-center">Thursday</th>
-                  <th className="px-4 py-3 text-center">Friday</th>
-                  <th className="px-4 py-3 text-center">Saturday</th>
-                </tr>
-              </thead>
-              <tbody>
-                {classSchedule.map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                    <td className="px-4 py-3 font-semibold">{row.time}</td>
-                    <td className="px-4 py-3 text-center">{row.monday}</td>
-                    <td className="px-4 py-3 text-center">{row.tuesday}</td>
-                    <td className="px-4 py-3 text-center">{row.wednesday}</td>
-                    <td className="px-4 py-3 text-center">{row.thursday}</td>
-                    <td className="px-4 py-3 text-center">{row.friday}</td>
-                    <td className="px-4 py-3 text-center">{row.saturday}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      {/* Testimonials */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-10">What Our Clients Say</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <div key={i} className="bg-white p-6 rounded-lg shadow">
+                <p className="italic text-gray-700 mb-4">“{t.quote}”</p>
+                <p className="font-semibold text-blue-600">{t.name}</p>
+                <p className="text-sm text-gray-500">{t.role}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {/* Membership Plans */}
+      {/* Case Studies */}
       {/* <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Membership Plans</h2>
-            <p className="text-xl text-gray-600">Choose the plan that fits your lifestyle and goals</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-2xl text-blue-600">Basic</CardTitle>
-                <div className="text-4xl font-bold text-gray-900">
-                  $29<span className="text-lg text-gray-600">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Gym access during business hours</span>
-                  </li>
-                  <li className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Basic equipment access</span>
-                  </li>
-                  <li className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Locker room access</span>
-                  </li>
-                </ul>
-                <Button asChild className="w-full">
-                  <Link href="/contact">Choose Plan</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow border-blue-500 border-2">
-              <CardHeader>
-                <div className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm mb-2 inline-block">
-                  Most Popular
-                </div>
-                <CardTitle className="text-2xl text-blue-600">Premium</CardTitle>
-                <div className="text-4xl font-bold text-gray-900">
-                  $59<span className="text-lg text-gray-600">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>24/7 gym access</span>
-                  </li>
-                  <li className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>All equipment access</span>
-                  </li>
-                  <li className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Group classes included</span>
-                  </li>
-                  <li className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Guest passes (2/month)</span>
-                  </li>
-                </ul>
-                <Button asChild className="w-full">
-                  <Link href="/contact">Choose Plan</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-2xl text-blue-600">Elite</CardTitle>
-                <div className="text-4xl font-bold text-gray-900">
-                  $99<span className="text-lg text-gray-600">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Everything in Premium</span>
-                  </li>
-                  <li className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>2 personal training sessions</span>
-                  </li>
-                  <li className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Nutrition consultation</span>
-                  </li>
-                  <li className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Priority booking</span>
-                  </li>
-                </ul>
-                <Button asChild className="w-full">
-                  <Link href="/contact">Choose Plan</Link>
-                </Button>
-              </CardContent>
-            </Card>
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-10">Case Studies</h2>
+          <div className="grid md:grid-cols-2 gap-6 text-left">
+            {caseStudies.map((cs, i) => (
+              <div key={i} className="bg-white p-6 border rounded-lg shadow hover:shadow-md transition">
+                <h3 className="text-xl font-semibold mb-2">{cs.title}</h3>
+                <p className="text-gray-600 mb-4">{cs.summary}</p>
+                <Link href={cs.link} className="text-blue-600 font-medium hover:underline">
+                  Read Full Case Study →
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section> */}
 
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+      {/* CTA */}
+      <section className="py-20 bg-blue-600 text-white text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Partner with Industry Experts</h2>
           <p className="text-xl mb-8 text-blue-100">
-            Choose your service and begin your transformation journey today. Our expert team is here to support you
-            every step of the way.
+            Book a consultation to explore how we can help scale and systemize your gym business effectively.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">

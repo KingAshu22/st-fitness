@@ -13,7 +13,6 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "BMI Calculator", href: "/bmi-calculator" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ]
@@ -22,10 +21,10 @@ export default function Navbar() {
     <nav className="bg-white shadow-lg fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex items-center bg-black px-4 my-2 rounded-lg">
+          <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <Image className="text-blue-600" src={"/logo.png"} width={32} height={32} alt="ST Fitness Logo"/>
-              <span className="text-2xl font-bold text-gray-900 text-white">ST Fitness</span>
+              <Image className="text-blue-600 mt-1" src={"/head-logo.png"} width={36} height={36} alt="ST Fitness Logo"/>
+              <span className="text-3xl font-bold text-gray-900">ST Fitness</span>
             </Link>
           </div>
 

@@ -14,8 +14,8 @@ export default function Footer() {
               <span className="text-2xl font-bold">ST Fitness</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
-              Transform your body and mind at ST Fitness. We provide world-class facilities, expert trainers, and
-              personalized programs to help you achieve your fitness goals.
+              Transform your GYM by ST Fitness. We provide world-class facilities, expert marketing solutions, and
+              complete GYM Management to help you grow your gym.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/Scientifictrainingfitness/" target="_blank" rel="noopener noreferrer">
@@ -39,11 +39,6 @@ export default function Footer() {
               <li>
                 <Link href="/services" className="text-gray-300 hover:text-white">
                   Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/bmi-calculator" className="text-gray-300 hover:text-white">
-                  BMI Calculator
                 </Link>
               </li>
               <li>
